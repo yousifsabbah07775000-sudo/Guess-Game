@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #f44336;
+}
+body {
+  margin: 0;
+  background-color: #eee;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  margin: 0 0 50px;
+}
+.guess-game {
+  text-align: center;
+  width: 1000px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 20px auto;
+  .game-area {
+    text-align: center;
+    .inputs {
+      > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        span {
+          font-size: 30px;
+          font-weight: bold;
+          margin-right: 15px;
+        }
+      }
+      .disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      input {
+        width: 60px;
+        height: 60px;
+        margin: 0 5px;
+        font-size: 50px;
+        text-align: center;
+        border: none;
+        border-bottom: 3px solid #333;
+        caret-color: var(--primary-color);
+        background-color: white;
+        &:focus {
+          outline-color: #ccc;
+        }
+        &.yes-in-place {
+          background-color: #18ba89;
+          border: #18ba89;
+        }
+        &.not-in-place {
+          background-color: #f89e13;
+          border: #f89e13;
+        }
+        &.no {
+          background-color: #27303f;
+          border: #27303f;
+        }
+      }
+    }
+    .control {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 30px auto;
+      button {
+        color: white;
+        border: none;
+        font-size: 30px;
+        padding: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .check {
+        background-color: var(--primary-color);
+        flex: 1;
+      }
+      .hint {
+        background-color: #009688;
+        width: fit-content;
+      }
+      button:disabled {
+        background-color: black;
+        opacity: 0.4;
+        cursor: no-drop;
+      }
+    }
+  }
+  .key-colors {
+    .key-color {
+      display: flex;
+      padding: 15px;
+      align-items: center;
+      background-color: white;
+      margin-bottom: 10px;
+      .key {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        border-radius: 50%;
+        &.in-place {
+          background-color: #18ba89;
+        }
+        &.not-in-place {
+          background-color: #f89e13;
+        }
+        &.no {
+          background-color: #27303f;
+        }
+      }
+      .key-text {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: wheat;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  .game-developer {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
